@@ -1,7 +1,7 @@
 package org.example
 
 const val FAVORABLE_HUMIDITY = 20
-const val FAVORABLE_SEASON = "не зима"
+const val UNFAVORABLE_SEASON = "зима"
 
 fun main() {
 
@@ -11,7 +11,7 @@ fun main() {
     val currentSeason: String = "зима"
 
     val isConditionsFavorable =
-        isSunny && isTentOpen && (currentHumidity == FAVORABLE_HUMIDITY) && (currentSeason == FAVORABLE_SEASON)
+        isSunny && isTentOpen && (currentHumidity == FAVORABLE_HUMIDITY) && (currentSeason != UNFAVORABLE_SEASON)
 
     println("Благоприятные ли условия сейчас для роста бобовых? $isConditionsFavorable")
 }
