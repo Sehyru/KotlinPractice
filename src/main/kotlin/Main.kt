@@ -5,8 +5,10 @@ fun main() {
     val day = 5
     val isEvenDay = day % 2 == 0
 
-    println("Упражнение для рук: ${!isEvenDay}\n" +
-            "Упражнение для ног: $isEvenDay\n" +
-            "Упражнение для спины: $isEvenDay\n" +
-            "Упражнение для пресса: ${!isEvenDay}")
+    println(
+        """Упражнения для рук: ${!isEvenDay}
+           |Упражнения для ног: $isEvenDay
+           |Упражнения для спины: $isEvenDay
+           |Упражнения для пресса: ${!isEvenDay}""".trimMargin()
+    )
 }
