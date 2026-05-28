@@ -1,5 +1,9 @@
 package org.example
 
+const val CREW_MIN = 55
+const val CREW_MAX = 70
+const val PROVISION_MIN = 50
+
 fun main() {
 
     println("Введите наличие повреждений корпуса (true — есть повреждения, false — нет повреждений):")
@@ -14,15 +18,15 @@ fun main() {
     println("Введите благоприятность метеоусловий (true - благоприятная, false - неблагоприятная):")
     val isWeatherSafe = readln().toBoolean()
 
-    val hasEnoughCrew = crew in 55..70
-    val hasSufficientProvision = provision > 50
-    val hasRecommendedCrew = crew == 70
-    val hasMinimumProvision = provision >= 50
+    val hasEnoughCrew = crew in CREW_MIN..CREW_MAX
+    val hasSufficientProvision = provision > PROVISION_MIN
+    val hasRecommendedCrew = crew == CREW_MAX
+    val hasMinimumProvision = provision >= PROVISION_MIN
 
 
     val canDepartLongVoyage =
-        (!isHullDamaged && hasEnoughCrew && hasSufficientProvision && (isWeatherSafe || !isWeatherSafe)) ||
-                ((isHullDamaged || !isHullDamaged) && hasRecommendedCrew && isWeatherSafe && hasMinimumProvision)
+        (!isHullDamaged && hasEnoughCrew && hasSufficientProvision) ||
+                (isHullDamaged && hasRecommendedCrew && isWeatherSafe && hasMinimumProvision)
 
     if (canDepartLongVoyage) {
         println("Корабль может отправиться в плавание.")
