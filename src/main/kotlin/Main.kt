@@ -21,8 +21,8 @@ fun main() {
         (firstUserInput == FIRST_WINNING_NUMBER && secondUserInput == SECOND_WINNING_NUMBER)
                 || (firstUserInput == SECOND_WINNING_NUMBER && secondUserInput == FIRST_WINNING_NUMBER)
     val oneCorrect =
-        !bothCorrect && (firstUserInput == FIRST_WINNING_NUMBER || secondUserInput == SECOND_WINNING_NUMBER)
-                || (firstUserInput == SECOND_WINNING_NUMBER || secondUserInput == FIRST_WINNING_NUMBER)
+        !bothCorrect && ((firstUserInput == FIRST_WINNING_NUMBER || secondUserInput == SECOND_WINNING_NUMBER)
+                || (firstUserInput == SECOND_WINNING_NUMBER || secondUserInput == FIRST_WINNING_NUMBER))
 
     val result =
         if (bothCorrect) "Поздравляем! Вы выиграли главный приз!"
