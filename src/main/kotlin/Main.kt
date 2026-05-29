@@ -18,11 +18,17 @@ fun main() {
     val secondUserInput = readln().toInt()
 
     val bothCorrect =
-        (firstUserInput == FIRST_WINNING_NUMBER && secondUserInput == SECOND_WINNING_NUMBER) || (firstUserInput == SECOND_WINNING_NUMBER && secondUserInput == FIRST_WINNING_NUMBER)
+        (firstUserInput == FIRST_WINNING_NUMBER && secondUserInput == SECOND_WINNING_NUMBER)
+                || (firstUserInput == SECOND_WINNING_NUMBER && secondUserInput == FIRST_WINNING_NUMBER)
     val oneCorrect =
-        (firstUserInput == FIRST_WINNING_NUMBER || secondUserInput == SECOND_WINNING_NUMBER) || (firstUserInput == SECOND_WINNING_NUMBER || secondUserInput == FIRST_WINNING_NUMBER)
+        (firstUserInput == FIRST_WINNING_NUMBER || secondUserInput == SECOND_WINNING_NUMBER)
+                || (firstUserInput == SECOND_WINNING_NUMBER || secondUserInput == FIRST_WINNING_NUMBER)
 
     val result =
-        if (bothCorrect) "Поздравляем! Вы выиграли главный приз!" else if (oneCorrect) "Вы выиграли утешительный приз!" else "Неудача!"
+        if (bothCorrect) "Поздравляем! Вы выиграли главный приз!"
+        else if (oneCorrect) "Вы выиграли утешительный приз!"
+        else "Неудача!"
     println(result)
+
+    println("Загаданные числа: $FIRST_WINNING_NUMBER и $SECOND_WINNING_NUMBER")
 }
