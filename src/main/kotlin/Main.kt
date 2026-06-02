@@ -10,16 +10,21 @@ fun main() {
 
     println("Регистрация завершена! Теперь войдите в приложение!")
 
-    do {
-        print("Введите логин: ")
-        val inputLogin = readln()
+    print("Введите логин: ")
+    var inputLogin = readln()
 
-        print("Введите пароль: ")
-        val inputPassword = readln()
+    print("Введите пароль: ")
+    var inputPassword = readln()
 
+    while (inputLogin != registeredLogin || inputPassword != registeredPassword) {
         println("Неверный логин или пароль. Попробуйте ещё раз.")
 
-    } while (inputLogin != registeredLogin || inputPassword != registeredPassword)
+        print("Введите логин: ")
+        inputLogin = readln()
+
+        print("Введите пароль: ")
+        inputPassword = readln()
+    }
 
     println("Авторизация прошла успешно")
 }
