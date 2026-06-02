@@ -20,8 +20,6 @@ fun main() {
         print("Введите пароль: ")
         inputPassword = readln()
 
-        if (inputLogin == registeredLogin && inputPassword == registeredPassword) {
-            println("Авторизация прошла успешно")
-        }
     } while (inputLogin != registeredLogin || inputPassword != registeredPassword)
+    println("Авторизация прошла успешно")
 }
