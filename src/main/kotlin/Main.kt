@@ -17,9 +17,8 @@ fun main() {
         print("Введите пароль: ")
         val inputPassword = readln()
 
-        if (inputLogin != registeredLogin || inputPassword != registeredPassword) {
-            println("Неверный логин или пароль. Попробуйте ещё раз.")
-        }
+        println("Неверный логин или пароль. Попробуйте ещё раз.")
+
     } while (inputLogin != registeredLogin || inputPassword != registeredPassword)
 
     println("Авторизация прошла успешно")
