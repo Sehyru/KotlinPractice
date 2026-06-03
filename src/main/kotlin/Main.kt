@@ -2,12 +2,11 @@ package org.example
 
 fun main() {
     println("Введите количество секунд: ")
-    val seconds = readln().toInt()
+    var seconds = readln().toInt()
 
-    var count = seconds
-    while (count > 0) {
+    while (seconds > 0) {
+        println("Осталось секунд: ${seconds--}")
         Thread.sleep(1000L)
-        println("Осталось секунд: ${count--}")
     }
     println("Время вышло")
 }
