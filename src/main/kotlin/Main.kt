@@ -1,16 +1,16 @@
 package org.example
 
-import kotlin.random.Random
+const val PASSWORD_SIZE = 6
 
 fun main() {
-    val digits = "0123456789"
-    val letters = "abcdefghijklmnopqrstuvwxyz"
+    val digits = 0..9
+    val letters = 'a'..'z'
 
     var password = ""
 
-    for (i in 1..6) {
-        password += if (i % 2 == 0) digits[Random.nextInt(digits.length)]
-        else letters[Random.nextInt(letters.length)]
+    for (i in 1..PASSWORD_SIZE) {
+        password += if (i % 2 == 0) digits.random()
+        else letters.random()
     }
 
     println(password)
