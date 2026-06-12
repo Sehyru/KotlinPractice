@@ -4,6 +4,7 @@ fun main() {
     val digits = '0'..'9'
     val letters = 'a'..'z'
     val uppercaseLetters = 'A'..'Z'
+    val allChars = digits + letters + uppercaseLetters
 
     var passwordSize: Int
 
@@ -21,7 +22,7 @@ fun main() {
     )
 
     for (i in 4..passwordSize) {
-        password.add((digits + letters + uppercaseLetters).random())
+        password.add((allChars).random())
     }
 
     password.shuffle()
