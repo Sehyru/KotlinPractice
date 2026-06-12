@@ -18,11 +18,11 @@ fun main() {
     val password = mutableListOf(
         digits.random(),
         letters.random(),
-        uppercaseLetters.random()
+        uppercaseLetters.random(),
     )
 
     for (i in 4..passwordSize) {
-        password.add((allChars).random())
+        password.add(allChars.random())
     }
 
     password.shuffle()
