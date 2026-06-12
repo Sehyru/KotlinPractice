@@ -14,14 +14,17 @@ fun main() {
         if (passwordSize < 6) println("Введите число не меньше 6.")
     } while (passwordSize < 6)
 
-    var password = ""
+    val password = mutableListOf(
+        digits.random(),
+        letters.random(),
+        uppercaseLetters.random()
+    )
 
-    for (i in 1..passwordSize) {
-        password += when (i % 3) {
-            0 -> digits.random()
-            1 -> letters.random()
-            else -> uppercaseLetters.random()
-        }
+    for (i in 4..passwordSize) {
+        password.add((digits + letters + uppercaseLetters).random())
     }
-    println(password)
+
+    password.shuffle()
+
+    println(password.joinToString(""))
 }
