@@ -32,11 +32,13 @@ fun playRound(): Boolean {
 
 fun main() {
     var wins = 0
+
     do {
         val playerWon = playRound()
         if (playerWon) wins++
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         val userAnswer = readln()
     } while (userAnswer == "Да")
+
     println("Игрок выиграл партий: $wins")
 }
