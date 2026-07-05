@@ -38,7 +38,7 @@ fun main() {
 
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         val userAnswer = readln()
-        if (userAnswer != "Да") break
+        if (!userAnswer.equals("Да", ignoreCase = true)) break
     }
     println("Игрок выиграл партий: $wins")
 }
