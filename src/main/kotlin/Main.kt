@@ -1,26 +1,38 @@
 package org.example
 
-class User {
-    var id: Int = 0
-    var login: String = ""
-    var password: String = ""
-    var email: String = ""
+class Member(
+    val name: String,
+    var status: String
+)
+
+class Room {
+    var cover: String = ""
+    var roomName: String = ""
+    var membersList: MutableList<Member> = mutableListOf()
+
+    fun addMember(member: Member) {
+        membersList.add(member)
+        println("Участник: ${member.name} добавлен. Статус: ${member.status}. Всего участников: ${membersList.size}")
+    }
+
+    fun statusUpdate(memberName: String, newStatus: String) {
+        val member = membersList.find { it.name == memberName }
+        if (member != null) {
+            member.status = newStatus
+            println("Участник: $memberName. Статус обновлён: $newStatus")
+        } else {
+            println("Участник $memberName не найден.")
+        }
+    }
 }
 
 fun main() {
-    val user1 = User()
-    val user2 = User()
+    val room = Room()
+    room.cover = "cover.png"
+    room.roomName = "Четыре комнаты"
 
-    user1.id = 1
-    user1.login = "user1"
-    user1.password = "pass1"
-    user1.email = "user1@gmail.com"
+    room.addMember(Member("Костя", "разговаривает"))
+    room.addMember(Member("Саша", "микрофон выключен"))
 
-    user2.id = 2
-    user2.login = "user2"
-    user2.password = "pass2"
-    user2.email = "user2@gmail.com"
-
-    println("#${user1.id}, ${user1.login}, ${user1.password}, ${user1.email}")
-    println("#${user2.id}, ${user2.login}, ${user2.password}, ${user2.email}")
+    room.statusUpdate("Костя", "пользователь заглушен")
 }
