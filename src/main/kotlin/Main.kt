@@ -14,7 +14,7 @@ fun main() {
     val companies = mutableListOf<String>()
     for (contact in contacts) {
         val company = contact.company ?: "<не указано>"
-        if (!companies.contains(company)) {
+        if (contact.company != null && !companies.contains(contact.company)) {
             companies.add(company)
         }
     }
