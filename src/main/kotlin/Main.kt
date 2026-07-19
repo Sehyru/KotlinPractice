@@ -9,12 +9,13 @@ class Contact(val name: String, val phone: Long, val company: String? = null) {
 fun main() {
     val contacts = mutableListOf<Contact>()
 
-    println("Сколько котактов хотите добавить?")
-    val count = readln().toInt()
-
-    while (contacts.size < count) {
+    while (true) {
         println("Введите имя:")
         val name = readln()
+
+        if (name.isBlank()) {
+            break
+        }
 
         println("Введите номер телефона:")
         val phoneInput = readln().toLongOrNull()
