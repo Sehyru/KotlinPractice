@@ -6,7 +6,11 @@ fun main() {
     println("Введите номер телефона: ")
     val input = readln()
 
-    input.toLongOrNull()?.let {
-        println("Номер телефона: $it")
-    } ?: println("Ошибка: введено не число")
+    try {
+        input.toLong().let {
+            println("Номер телефона: $it")
+        }
+    } catch (e: NumberFormatException) {
+        println(e::class.simpleName)
+    }
 }
